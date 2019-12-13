@@ -8,7 +8,7 @@ import SmurfForm from "./SmurfForm";
 function App () {
 
   //useState Hook to set state
-  const [smurfs, setSmurfs] = useState();
+  const [smurfs, setSmurfs] = useState([]);
 
   //useEffect hook to get API request going
   useEffect(() =>{
@@ -16,6 +16,8 @@ function App () {
     .then(response =>{
       console.log(response.data)
       setSmurfs(response.data)
+      console.log(smurfs)
+
 
     }) // end of then
     .catch(error => 
@@ -26,11 +28,11 @@ function App () {
 
   return(
     // SmurfContext Provider needs to wrap our component and set the value so I can then pass it later to other components
-    <SmurfContext.Provider values= {{smurfs, setSmurfs}}>
+    <SmurfContext.Provider values= {smurfs}>
       <div className="App">
         <h1>SMURFS! 2.0 W/ ContextAPI</h1>
-        <Smurf />
-        <SmurfForm />
+         <Smurf />
+        <SmurfForm /> 
   </div>
     </SmurfContext.Provider>
     
