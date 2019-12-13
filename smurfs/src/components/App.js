@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
+import {SmurfContext} from '../src/contexts/smurfContext';
+
 class App extends Component {
   render() {
     return (
