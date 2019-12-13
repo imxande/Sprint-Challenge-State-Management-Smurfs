@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
+import Smurf from './Smurf';
 import {SmurfContext} from '../contexts/SmurfContext'; // context object to use the goodies that comes with it (Provider, value)
 import axios from 'axios'; // using axios to get response
 
@@ -31,6 +32,7 @@ function App () {
         <div>Start inside of your `src/index.js` file!</div>
         <div>Have fun!</div>
         <div>Component Goes Here!</div>
+        <Smurf />
   </div>
     </SmurfContext.Provider>
     
