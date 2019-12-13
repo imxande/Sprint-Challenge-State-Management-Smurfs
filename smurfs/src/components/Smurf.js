@@ -1,9 +1,10 @@
 import React from 'react';
+import SmurfCard from './SmurfCard';
 
 function Smurf(){
     return(
         <div>
-            Smurf Card component goes here<br/>
+           <SmurfCard /> <br/>
             <button>I need to add or delete here</button>
         </div>
     )

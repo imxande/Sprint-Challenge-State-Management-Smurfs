@@ -3,6 +3,7 @@ import "./App.css";
 import Smurf from './Smurf';
 import {SmurfContext} from '../contexts/SmurfContext'; // context object to use the goodies that comes with it (Provider, value)
 import axios from 'axios'; // using axios to get response
+import SmurfForm from "./SmurfForm";
 
 function App () {
 
@@ -28,11 +29,8 @@ function App () {
     <SmurfContext.Provider values= {{smurfs, setSmurfs}}>
       <div className="App">
         <h1>SMURFS! 2.0 W/ ContextAPI</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
-        <div>Component Goes Here!</div>
         <Smurf />
+        <SmurfForm />
   </div>
     </SmurfContext.Provider>
     
