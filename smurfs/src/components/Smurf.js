@@ -1,14 +1,20 @@
-import React, {useContext} from 'react';
+import React, {useEffect} from 'react';
 import SmurfCard from './SmurfCard';
-import {SmurfContext} from '../contexts/SmurfContext';
+import {connect} from 'react-redux';
+import {getSmurfs} from '../store/actions';
 
-function Smurf(){
 
-    const smurfs = useContext(SmurfContext);
+function Smurf(props){
+    console.log(props.smurfs, 'al')
+    
+useEffect(() =>{
+    props.getSmurfs()
+},[]) 
 
     return(
         <div>
-           {smurfs && smurfs.map(smurf => (
+           
+           { props.smurfs.map(smurf => (
 				<SmurfCard
 					key={smurf.id}
 					smurf = {smurf}
@@ -19,5 +25,12 @@ function Smurf(){
     )
 }
 
-export default Smurf;
+const mapStateToProps = (state) => {
+    return {
+        smurfs: state.smurfs
+    }
+}
+
+
+export default connect(mapStateToProps, {getSmurfs}) (Smurf);
 
